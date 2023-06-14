@@ -178,115 +178,115 @@ describe("insert", function () {
   });
 });
 
-// describe("insertRecursively", function () {
-//   //insert to empty tree
-//   it("inserts a node at the root if empty tree", function () {
-//     emptyBST.insertRecursively(15);
-//     expect(emptyBST.root.val).toEqual(15);
-//     expect(emptyBST.root.left).toBe(null);
-//     expect(emptyBST.root.right).toBe(null);
-//   });
+describe("insertRecursively", function () {
+  //insert to empty tree
+  it("inserts a node at the root if empty tree", function () {
+    emptyBST.insertRecursively(15);
+    expect(emptyBST.root.val).toEqual(15);
+    expect(emptyBST.root.left).toBe(null);
+    expect(emptyBST.root.right).toBe(null);
+  });
 
-//   //insertRecursively to full tree, largest (most right)
-//   it("inserts node larger than current largest at far right (small)", function () {
-//     smallBST.insertRecursively(21);
-//     expect(smallBST.root.right.val).toEqual(20);
-//     expect(smallBST.root.right.right.val).toEqual(21);
-//     expect(smallBST.root.right.left).toBe(null);
-//   });
+  //insertRecursively to full tree, largest (most right)
+  it("inserts node larger than current largest at far right (small)", function () {
+    smallBST.insertRecursively(21);
+    expect(smallBST.root.right.val).toEqual(20);
+    expect(smallBST.root.right.right.val).toEqual(21);
+    expect(smallBST.root.right.left).toBe(null);
+  });
 
-//   it("inserts node larger than current largest at far right (large)", function () {
-//     largeBST.insertRecursively(101);
-//     expect(largeBST.root.right.right.val).toEqual(100);
-//     expect(largeBST.root.right.right.right.val).toEqual(101);
-//     expect(largeBST.root.right.right.left).toBe(null);
-//   });
+  it("inserts node larger than current largest at far right (large)", function () {
+    largeBST.insertRecursively(101);
+    expect(largeBST.root.right.right.val).toEqual(100);
+    expect(largeBST.root.right.right.right.val).toEqual(101);
+    expect(largeBST.root.right.right.left).toBe(null);
+  });
 
-//   //insertRecursively to full tree, smallest (most left)
-//   it("inserts node smaller than current smallest at far left (small)", function () {
-//     smallBST.insertRecursively(9);
-//     expect(smallBST.root.val).toEqual(10);
-//     expect(smallBST.root.left.val).toEqual(9);
-//     expect(smallBST.root.left.left).toBe(null);
-//     expect(smallBST.root.left.right).toBe(null);
-//   });
+  //insertRecursively to full tree, smallest (most left)
+  it("inserts node smaller than current smallest at far left (small)", function () {
+    smallBST.insertRecursively(9);
+    expect(smallBST.root.val).toEqual(10);
+    expect(smallBST.root.left.val).toEqual(9);
+    expect(smallBST.root.left.left).toBe(null);
+    expect(smallBST.root.left.right).toBe(null);
+  });
 
-//   it("inserts node smaller than current smallest at far left (large)", function () {
-//     largeBST.insertRecursively(9);
-//     expect(largeBST.root.left.left.val).toEqual(10);
-//     expect(largeBST.root.left.left.left.val).toEqual(9);
-//     expect(largeBST.root.left.left.right.val).toEqual(15);
-//     expect(largeBST.root.left.left.left.left).toBe(null);
-//   });
+  it("inserts node smaller than current smallest at far left (large)", function () {
+    largeBST.insertRecursively(9);
+    expect(largeBST.root.left.left.val).toEqual(10);
+    expect(largeBST.root.left.left.left.val).toEqual(9);
+    expect(largeBST.root.left.left.right.val).toEqual(15);
+    expect(largeBST.root.left.left.left.left).toBe(null);
+  });
 
-//   //insertRecursively penultimate largest
-//   it("inserts penultimate largest node as left of far right node (small)", function () {
-//     smallBST.insertRecursively(19);
-//     expect(smallBST.root.right.val).toEqual(20);
-//     expect(smallBST.root.right.left.val).toEqual(19);
-//     expect(smallBST.root.right.left.left).toBe(null);
-//     expect(smallBST.root.right.left.right).toBe(null);
-//     expect(smallBST.root.right.right).toBe(null);
-//   });
+  //insertRecursively penultimate largest
+  it("inserts penultimate largest node as left of far right node (small)", function () {
+    smallBST.insertRecursively(19);
+    expect(smallBST.root.right.val).toEqual(20);
+    expect(smallBST.root.right.left.val).toEqual(19);
+    expect(smallBST.root.right.left.left).toBe(null);
+    expect(smallBST.root.right.left.right).toBe(null);
+    expect(smallBST.root.right.right).toBe(null);
+  });
 
-//   it("inserts penultimate largest node as left of far right node (largest)", function () {
-//     largeBST.insertRecursively(99);
-//     expect(largeBST.root.right.right.val).toEqual(100);
-//     expect(largeBST.root.right.right.left.val).toEqual(99);
-//     expect(largeBST.root.right.right.left.left).toBe(null);
-//     expect(largeBST.root.right.right.left.right).toBe(null);
-//     expect(largeBST.root.right.right.right).toBe(null);
-//   });
+  it("inserts penultimate largest node as left of far right node (largest)", function () {
+    largeBST.insertRecursively(99);
+    expect(largeBST.root.right.right.val).toEqual(100);
+    expect(largeBST.root.right.right.left.val).toEqual(99);
+    expect(largeBST.root.right.right.left.left).toBe(null);
+    expect(largeBST.root.right.right.left.right).toBe(null);
+    expect(largeBST.root.right.right.right).toBe(null);
+  });
 
-//   //insertRecursively penultimate smallest
-//   it("inserts penultimate smallest to right place (small)", function () {
-//     smallBST.insertRecursively(11);
-//     expect(smallBST.root.right.val).toEqual(20);
-//     expect(smallBST.root.right.left.val).toEqual(11);
-//     expect(smallBST.root.right.left.left).toBe(null);
-//     expect(smallBST.root.right.left.right).toBe(null);
-//     expect(smallBST.root.right.right).toBe(null);
-//   });
+  //insertRecursively penultimate smallest
+  it("inserts penultimate smallest to right place (small)", function () {
+    smallBST.insertRecursively(11);
+    expect(smallBST.root.right.val).toEqual(20);
+    expect(smallBST.root.right.left.val).toEqual(11);
+    expect(smallBST.root.right.left.left).toBe(null);
+    expect(smallBST.root.right.left.right).toBe(null);
+    expect(smallBST.root.right.right).toBe(null);
+  });
 
-//   it("inserts penultimate smallest to right place (large)", function () {
-//     largeBST.insertRecursively(11);
-//     expect(largeBST.root.left.left.val).toEqual(10);
-//     expect(largeBST.root.left.left.right.val).toEqual(15);
-//     expect(largeBST.root.left.left.right.left.val).toEqual(11);
-//     expect(largeBST.root.left.left.left).toBe(null);
-//     expect(largeBST.root.left.left.right.right).toBe(null);
-//   });
+  it("inserts penultimate smallest to right place (large)", function () {
+    largeBST.insertRecursively(11);
+    expect(largeBST.root.left.left.val).toEqual(10);
+    expect(largeBST.root.left.left.right.val).toEqual(15);
+    expect(largeBST.root.left.left.right.left.val).toEqual(11);
+    expect(largeBST.root.left.left.left).toBe(null);
+    expect(largeBST.root.left.left.right.right).toBe(null);
+  });
 
-//   //insertRecursively one bigger than root -- don't need small tree, same as above^^
-//   it("inserts node one bigger than root (large)", function () {
-//     largeBST.insertRecursively(51);
-//     expect(largeBST.root.val).toEqual(50);
-//     expect(largeBST.root.right.val).toEqual(75);
-//     expect(largeBST.root.right.left.val).toEqual(51);
-//     expect(largeBST.root.right.left.left).toBe(null);
-//     expect(largeBST.root.right.left.right).toBe(null);
-//   });
+  //insertRecursively one bigger than root -- don't need small tree, same as above^^
+  it("inserts node one bigger than root (large)", function () {
+    largeBST.insertRecursively(51);
+    expect(largeBST.root.val).toEqual(50);
+    expect(largeBST.root.right.val).toEqual(75);
+    expect(largeBST.root.right.left.val).toEqual(51);
+    expect(largeBST.root.right.left.left).toBe(null);
+    expect(largeBST.root.right.left.right).toBe(null);
+  });
 
-//   //insertRecursively one smaller than root
-//   it("inserts node one smaller than root (small)", function () {
-//     smallBST.insertRecursively(9);
-//     expect(smallBST.root.val).toEqual(10);
-//     expect(smallBST.root.right.val).toEqual(20);
-//     expect(smallBST.root.left.val).toEqual(9);
-//     expect(smallBST.root.left.left).toBe(null);
-//     expect(smallBST.root.left.right).toBe(null);
-//   });
+  //insertRecursively one smaller than root
+  it("inserts node one smaller than root (small)", function () {
+    smallBST.insertRecursively(9);
+    expect(smallBST.root.val).toEqual(10);
+    expect(smallBST.root.right.val).toEqual(20);
+    expect(smallBST.root.left.val).toEqual(9);
+    expect(smallBST.root.left.left).toBe(null);
+    expect(smallBST.root.left.right).toBe(null);
+  });
 
-//   it("inserts node one smaller than root (large)", function () {
-//     largeBST.insertRecursively(49);
-//     expect(largeBST.root.val).toEqual(50);
-//     expect(largeBST.root.left.val).toEqual(25);
-//     expect(largeBST.root.left.right.val).toEqual(40);
-//     expect(largeBST.root.left.right.right.val).toEqual(49);
-//     expect(largeBST.root.left.right.right.left).toBe(null);
-//     expect(largeBST.root.left.right.right.right).toBe(null);
-//   });
-// });
+  it("inserts node one smaller than root (large)", function () {
+    largeBST.insertRecursively(49);
+    expect(largeBST.root.val).toEqual(50);
+    expect(largeBST.root.left.val).toEqual(25);
+    expect(largeBST.root.left.right.val).toEqual(40);
+    expect(largeBST.root.left.right.right.val).toEqual(49);
+    expect(largeBST.root.left.right.right.left).toBe(null);
+    expect(largeBST.root.left.right.right.right).toBe(null);
+  });
+});
 
 // describe("find", function () {
 //   it("finds a leaf node correctly", function () {
