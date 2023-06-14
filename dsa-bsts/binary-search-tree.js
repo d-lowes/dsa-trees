@@ -54,7 +54,29 @@ class BinarySearchTree {
    * Returns the tree instance. Uses iteration. */
 
   insert(val) {
+    let node = new Node(val);
 
+    if (!this.root) {
+      this.root = node;
+    };
+
+    let current = this.root;
+
+    while (current) {
+      if (!current.left && !current.right) {
+        current.left = val < current.val ? node : null;
+        current.right = val > current.val ? node : null;
+        return this;
+      } else if (!current.right && val > current.val) {
+        current.right = node;
+        return this;
+      } else if (!current.left && val < current.val) {
+        current.left = node;
+        return this;
+      } else {
+        current = (val < current.val) ? current.left : current.right;
+      }
+    }
   }
 
   /** insertRecursively(val): Insert a new node into the BST with value val.
@@ -126,3 +148,22 @@ module.exports = {
   BinarySearchTree,
   Node,
 };
+
+
+// if (val > current.val) {
+//   if (!current.right) {
+//     current.right = node;
+//     return this;
+//   }
+//   else {
+//     current = (val < current.val) ? current.left : current.right;
+//   }
+// }
+// if (val < current.val) {
+//   if (!current.left) {
+//     current.left = node;
+//     return this;
+//   } else {
+//     current = (val < current.val) ? current.left : current.right;
+//   }
+// }
