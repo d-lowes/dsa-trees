@@ -288,88 +288,88 @@ describe("insertRecursively", function () {
   });
 });
 
-// describe("find", function () {
-//   it("finds a leaf node correctly", function () {
-//     let foundNode = smallBST.find(20);
-//     expect(foundNode.val).toEqual(20);
-//     expect(foundNode.left).toBe(null);
-//     expect(foundNode.right).toBe(null);
-//   });
+describe("find", function () {
+  it("finds a leaf node correctly", function () {
+    let foundNode = smallBST.find(20);
+    expect(foundNode.val).toEqual(20);
+    expect(foundNode.left).toBe(null);
+    expect(foundNode.right).toBe(null);
+  });
 
-//   it("finds root node correctly", function () {
-//     let foundNode = smallBST.find(10);
-//     expect(foundNode.val).toEqual(10);
-//     expect(foundNode.left).toBe(null);
-//     expect(foundNode.right.val).toEqual(20);
-//   });
+  it("finds root node correctly", function () {
+    let foundNode = smallBST.find(10);
+    expect(foundNode.val).toEqual(10);
+    expect(foundNode.left).toBe(null);
+    expect(foundNode.right.val).toEqual(20);
+  });
 
-//   it("finds node correctly on larger tree", function () {
-//     let foundNode = largeBST.find(10);
-//     expect(foundNode.val).toEqual(10);
-//     expect(foundNode.left).toBe(null);
-//     expect(foundNode.right.val).toEqual(15);
-//   });
+  it("finds node correctly on larger tree", function () {
+    let foundNode = largeBST.find(10);
+    expect(foundNode.val).toEqual(10);
+    expect(foundNode.left).toBe(null);
+    expect(foundNode.right.val).toEqual(15);
+  });
 
-//   it("returns undefined if a node is not found", function () {
-//     let foundNode = smallBST.find(120);
-//     expect(foundNode).toBe(undefined);
-//   });
-// });
+  it("returns undefined if a node is not found", function () {
+    let foundNode = smallBST.find(120);
+    expect(foundNode).toBe(undefined);
+  });
+});
 
-// describe("findRecursively", function () {
-//   it("finds a leaf node correctly", function () {
-//     let foundNode = smallBST.findRecursively(20);
-//     expect(foundNode.val).toEqual(20);
-//     expect(foundNode.left).toBe(null);
-//     expect(foundNode.right).toBe(null);
-//   });
+describe("findRecursively", function () {
+  it("finds a leaf node correctly", function () {
+    let foundNode = smallBST.findRecursively(20);
+    expect(foundNode.val).toEqual(20);
+    expect(foundNode.left).toBe(null);
+    expect(foundNode.right).toBe(null);
+  });
 
-//   it("finds root node correctly", function () {
-//     let foundNode = smallBST.findRecursively(10);
-//     expect(foundNode.val).toEqual(10);
-//     expect(foundNode.left).toBe(null);
-//     expect(foundNode.right.val).toEqual(20);
-//   });
+  it("finds root node correctly", function () {
+    let foundNode = smallBST.findRecursively(10);
+    expect(foundNode.val).toEqual(10);
+    expect(foundNode.left).toBe(null);
+    expect(foundNode.right.val).toEqual(20);
+  });
 
-//   it("finds node correctly on larger tree", function () {
-//     let foundNode = largeBST.findRecursively(10);
-//     expect(foundNode.val).toEqual(10);
-//     expect(foundNode.left).toBe(null);
-//     expect(foundNode.right.val).toEqual(15);
-//   });
+  it("finds node correctly on larger tree", function () {
+    let foundNode = largeBST.findRecursively(10);
+    expect(foundNode.val).toEqual(10);
+    expect(foundNode.left).toBe(null);
+    expect(foundNode.right.val).toEqual(15);
+  });
 
-//   it("returns undefined if a node is not found", function () {
-//     let foundNode = smallBST.findRecursively(120);
-//     expect(foundNode).toBe(undefined);
-//   });
-// });
+  it("returns undefined if a node is not found", function () {
+    let foundNode = smallBST.findRecursively(120);
+    expect(foundNode).toBe(undefined);
+  });
+});
 
-// describe("dfsPreOrder", function () {
-//   it("returns an array of values found with DFS Pre Order(small)", function () {
-//     expect(smallBST.dfsPreOrder()).toEqual([10, 20]);
-//   });
-//   it("returns an array of values found with DFS Pre Order(large)", function () {
-//     expect(largeBST.dfsPreOrder()).toEqual([50, 25, 10, 15, 40, 75, 100]);
-//   });
-//   it("returns an array of values found with DFS Pre Order(empty)", function () {
-//     expect(emptyBST.dfsPreOrder()).toEqual([]);
-//   });
-// });
+describe("dfsPreOrder", function () {
+  it("returns an array of values found with DFS Pre Order(small)", function () {
+    expect(smallBST.dfsPreOrder()).toEqual([10, 20]);
+  });
+  it("returns an array of values found with DFS Pre Order(large)", function () {
+    expect(largeBST.dfsPreOrder()).toEqual([50, 25, 10, 15, 40, 75, 100]);
+  });
+  it("returns an array of values found with DFS Pre Order(empty)", function () {
+    expect(emptyBST.dfsPreOrder()).toEqual([]);
+  });
+});
 
-// describe("dfsInOrder", function () {
-//   it("returns an array of values found with DFS In Order(small)", function () {
-//     expect(smallBST.dfsInOrder()).toEqual([10, 20]);
-//   });
+describe("dfsInOrder", function () {
+  it("returns an array of values found with DFS In Order(small)", function () {
+    expect(smallBST.dfsInOrder()).toEqual([10, 20]);
+  });
 
-//   it("returns an array of values found with DFS In Order(large)", function () {
-//     expect(largeBST.dfsInOrder()).toEqual([10, 15, 25, 40, 50, 75, 100]);
-//   });
+  it("returns an array of values found with DFS In Order(large)", function () {
+    expect(largeBST.dfsInOrder()).toEqual([10, 15, 25, 40, 50, 75, 100]);
+  });
 
-//   it("returns an array of values found with DFS In Order(empty)", function () {
-//     console.log("About to run dfs in order on empty table");
-//     expect(emptyBST.dfsInOrder()).toEqual([]);
-//   });
-// });
+  it("returns an array of values found with DFS In Order(empty)", function () {
+    console.log("About to run dfs in order on empty table");
+    expect(emptyBST.dfsInOrder()).toEqual([]);
+  });
+});
 
 // describe("dfsInOrderWithHelper", function () {
 //   it("returns an array of values found with DFS In Order(small)", function () {
@@ -405,17 +405,17 @@ describe("insertRecursively", function () {
 //   });
 // });
 
-// describe("dfsPostOrder", function () {
-//   it("returns an array of values found with DFS Post Order(small)", function () {
-//     expect(smallBST.dfsPostOrder()).toEqual([20, 10]);
-//   });
-//   it("returns an array of values found with DFS Post Order(large)", function () {
-//     expect(largeBST.dfsPostOrder()).toEqual([15, 10, 40, 25, 100, 75, 50]);
-//   });
-//   it("returns an array of values found with DFS Post Order(empty)", function () {
-//     expect(emptyBST.dfsPostOrder()).toEqual([]);
-//   });
-// });
+describe("dfsPostOrder", function () {
+  it("returns an array of values found with DFS Post Order(small)", function () {
+    expect(smallBST.dfsPostOrder()).toEqual([20, 10]);
+  });
+  it("returns an array of values found with DFS Post Order(large)", function () {
+    expect(largeBST.dfsPostOrder()).toEqual([15, 10, 40, 25, 100, 75, 50]);
+  });
+  it("returns an array of values found with DFS Post Order(empty)", function () {
+    expect(emptyBST.dfsPostOrder()).toEqual([]);
+  });
+});
 
 // describe("dfsPostOrderWithHelper", function () {
 //   it("returns an array of values found with DFS Post Order(small)", function () {
@@ -431,17 +431,17 @@ describe("insertRecursively", function () {
 //   });
 // });
 
-// describe("bfs", function () {
-//   it("returns an array of values found with BFS(small)", function () {
-//     expect(smallBST.bfs()).toEqual([10, 20]);
-//   });
-//   it("returns an array of values found with BFS (large)", function () {
-//     expect(largeBST.bfs()).toEqual([50, 25, 75, 10, 40, 100, 15]);
-//   });
-//   it("returns an array of values found with BFS(empty)", function () {
-//     expect(emptyBST.bfs()).toEqual([]);
-//   });
-// });
+describe("bfs", function () {
+  it("returns an array of values found with BFS(small)", function () {
+    expect(smallBST.bfs()).toEqual([10, 20]);
+  });
+  it("returns an array of values found with BFS (large)", function () {
+    expect(largeBST.bfs()).toEqual([50, 25, 75, 10, 40, 100, 15]);
+  });
+  it("returns an array of values found with BFS(empty)", function () {
+    expect(emptyBST.bfs()).toEqual([]);
+  });
+});
 
 // describe("findSuccessorNode", function () {
 //   it("finds successor in small tree", function () {
